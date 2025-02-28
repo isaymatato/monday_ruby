@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"query { me { id name email url account birthday country_code
+        created_at current_language join_date enabled is_admin is_guest is_pending
+        is_verified is_view_only last_activity location mobile_phone phone photo_original
+        photo_small photo_thumb photo_thumb_small photo_tiny sign_up_product_kind
+        teams time_zone_identifier title utc_hours_diff } }"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - invalid_token
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Fri, 28 Feb 2025 14:15:37 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      Etag:
+      - W/"56-jO0ghLOWWf8QDEiLlwC7K3Hc7eU"
+      X-Powered-By:
+      - Express
+      Vary:
+      - Origin, Accept-Encoding
+      X-Monday-Auth:
+      - 'true'
+      X-Monday-Region:
+      - undefined
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=Q0s809Z78lo1VsKjKulYrvcpBtiZEzqlleJfAtDTA6A-1740752137-1.0.1.1-I3jZXNgWcbjBplmkEEeY.VCT5cENW5Ls0ikB2aAeZy_sos7VNLIV4fLrf3mQU5YkHsA6oWHb1SGNod3Wd3PC0h9o0a9Rzg7Ir8ElmbdOyww;
+        path=/; expires=Fri, 28-Feb-25 14:45:37 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9191071c9c6f4662-DFW
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":[{"message":"Not authenticated","extensions":{"code":"NOT_AUTHENTICATED"}}]}'
+  recorded_at: Fri, 28 Feb 2025 14:15:37 GMT
+recorded_with: VCR 6.3.1

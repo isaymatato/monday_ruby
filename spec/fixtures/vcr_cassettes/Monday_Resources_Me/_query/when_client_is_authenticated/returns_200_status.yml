@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.monday.com/v2
+    body:
+      encoding: UTF-8
+      string: '{"query":"query { me { id name email url account birthday country_code
+        created_at current_language join_date enabled is_admin is_guest is_pending
+        is_verified is_view_only last_activity location mobile_phone phone photo_original
+        photo_small photo_thumb photo_thumb_small photo_tiny sign_up_product_kind
+        teams time_zone_identifier title utc_hours_diff } }"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Fri, 28 Feb 2025 14:15:38 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Content-Security-Policy:
+      - ";"
+      Content-Security-Policy-Report-Only:
+      - frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self';
+        connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;
+      Vary:
+      - Origin, Accept-Encoding
+      X-Monday-Auth:
+      - 'true'
+      X-Monday-Region:
+      - undefined
+      Etag:
+      - W/"56-jO0ghLOWWf8QDEiLlwC7K3Hc7eU"
+      X-Powered-By:
+      - Express
+      X-Monday-Rgn:
+      - use1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=5HnUSwF3Uh9F4hvs4wE.yplBwsuIj_RS5H0G6GPIBw4-1740752138-1.0.1.1-NzupbGolGmBIEP.ExgZZewvC3Id8rAGJbA1AvFOcuRrtLbnf_jz_tFZ6SuB_A9cA0DaK6vDfWu3eeyd2W.0HmiHpFIJwLSmMpX0Jx9UzAy1pbzNbKQXh44v3uPQcrW0L;
+        path=/; expires=Fri, 28-Feb-25 14:45:38 GMT; domain=.monday.com; HttpOnly;
+        Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9191071e2c3a46e9-DFW
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":[{"message":"Not authenticated","extensions":{"code":"NOT_AUTHENTICATED"}}]}'
+  recorded_at: Fri, 28 Feb 2025 14:15:38 GMT
+recorded_with: VCR 6.3.1
