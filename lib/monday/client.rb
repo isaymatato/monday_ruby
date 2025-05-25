@@ -31,6 +31,24 @@ module Monday
       handle_response(Response.new(response))
     end
 
+    # Execute raw GraphQL queries or mutations.
+    #
+    # @param query_string [String] The GraphQL query or mutation to execute
+    # @return [Monday::Response] The response from the API
+    #
+    # @example Query
+    #   client.query('query { users(ids: [123456]) { id name email } }')
+    #
+    # @example Mutation
+    #   client.query('mutation { create_webhook(board_id: 123, url: "https://example.com",
+    #                                           event: change_column_value) { id } }')
+    def query(query_string)
+      make_request(query_string)
+    end
+
+    # Alias for clarity when using mutations
+    alias mutate query
+
     private
 
     def configure(config_args)
