@@ -31,10 +31,10 @@ module Monday
       # @param select [Array<String>] the list of fields to return.
       # @return [Monday::Response] the response from the API.
       def create(board_id:, url:, event:, config: nil, select: DEFAULT_SELECT)
-        args = { board_id: board_id, url: url, event: event }
-        args[:config] = config if config
+        args_str = "board_id: #{board_id}, url: \"#{url}\", event: #{event}"
+        args_str += ", config: \"#{config}\"" if config
 
-        query = "mutation{create_webhook#{Util.format_args(args)}{#{Util.format_select(select)}}}"
+        query = "mutation{create_webhook(#{args_str}){#{Util.format_select(select)}}}"
         make_request(query)
       end
 
