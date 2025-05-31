@@ -14,11 +14,12 @@ module Monday
       # @param app_webhooks_only [Boolean] returns only webhooks created by the app
       # @param select [Array<String>] the list of fields to return.
       # @return [Monday::Response] the response from the API.
-      def query(board_id:, app_webhooks_only: false, select: DEFAULT_SELECT)
-        args = { board_id: board_id }
-        args[:app_webhooks_only] = app_webhooks_only if app_webhooks_only
 
-        request_query = "query{webhooks#{Util.format_args(args)}{#{Util.format_select(select)}}}"
+      def query(board_id:, app_webhooks_only: false, select: DEFAULT_SELECT)
+        args_str = "board_id: #{board_id}"
+        args_str += ", app_webhooks_only: #{app_webhooks_only}" if app_webhooks_only
+
+        request_query = "query{webhooks(#{args_str}){#{Util.format_select(select)}}}"
         make_request(request_query)
       end
 
